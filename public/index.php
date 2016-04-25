@@ -6,11 +6,15 @@ require_once '../config.php';
 $template_data = array();
 
 // handle login
-if (isset($_REQUEST['username']) && isset($_REQUEST['password'])) {
+if (isset($_REQUEST['add_user'])) {
+    Session::create_user($_REQUEST['username'], $_REQUEST['password']);
+} else if (isset($_REQUEST['username']) && isset($_REQUEST['password'])) {
     if (!Session::check_credentials($_REQUEST['username'], $_REQUEST['password'])) {
         $template_data['message'] = 'Login failed!';
     }
 }
+
+
 
 if (isset($_REQUEST['logout'])) {
     Session::logout();

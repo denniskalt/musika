@@ -9,5 +9,10 @@
    </label>
    <input id="password" type="password" name="password" placeholder="Passwort">
 
+   <label for="new_user">
+       Account erstellen?
+   </label>
+   <input type="checkbox" name="add_user" value="1">
+
    <button>Login</button>
 </form>

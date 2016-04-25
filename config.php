@@ -17,6 +17,7 @@ spl_autoload_register( function($class) {
 
 // create connection to database                       'root' , ''
 $dbh = new PDO('mysql:host=localhost;dbname=phpprakt', DB_USER, DB_PASS);
+$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 // start session
 session_start();
