@@ -9,10 +9,10 @@ http://php.net/manual/de/control-structures.alternative-syntax.php
 <table class="album">
     <colgroup>
         <col style="width: 20px;">
+        <col style="width: 30%">
+        <col style="width: 30%">
+        <col style="width: 30%">
         <col>
-        <col>
-        <col>
-        <col style="width: 30%;">
     </colgroup>
     <thead>
         <tr>
@@ -20,32 +20,20 @@ http://php.net/manual/de/control-structures.alternative-syntax.php
             <td>Künstler</td>
             <td>Album</td>
             <td>Erscheinungsjahr</td>
-            <td>Musikrichtung</td>
+            <td></td>
         </tr>
     </thead>
 
     <tbody>
+        <? if (!empty($albums)) foreach ($albums as $album) : ?>
         <tr>
-            <td>#17</td>
-            <td>Green Day</td>
-            <td>Dookie</td>
-            <td>1994</td>
-            <td>Punkrock, Pop-Punk, Alternative Rock</td>
+            <td>#<?= $album['id'] ?></td>
+            <td><?= h($album['artist']) ?></td>
+            <td><?= h($album['album']) ?></td>
+            <td><?= h($album['year']) ?></td>
+            <td><a href="?action=delete_album&id=<?= $album['id'] ?>">Löschen</a></td>
         </tr>
-        <tr>
-            <td>#19</td>
-            <td>Green Day</td>
-            <td>Dookie</td>
-            <td>1994</td>
-            <td>Punkrock, Pop-Punk, Alternative Rock</td>
-        </tr>
-        <tr>
-            <td>#27</td>
-            <td>Green Day</td>
-            <td>Dookie</td>
-            <td>1994</td>
-            <td>Punkrock, Pop-Punk, Alternative Rock</td>
-        </tr>
+        <? endforeach ?>
     </tbody>
 
     <tfoot>
@@ -54,3 +42,25 @@ http://php.net/manual/de/control-structures.alternative-syntax.php
         </tr>
     </tfoot>
 </table>
+
+<br>
+<form action="index.php" method="post" class="login">
+   <label for="artist">
+       Künstler:
+   </label>
+   <input id="artist" type="text" name="artist">
+
+   <label for="album">
+       Album:
+   </label>
+   <input id="album" type="text" name="album">
+
+   <label for="year">
+       Erscheinungsjahr:
+   </label>
+   <input id="year" type="text" name="year">
+
+   <button>Erstellen</button>
+
+   <input type="hidden" name="action" value="create_album">
+</form>

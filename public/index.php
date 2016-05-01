@@ -14,6 +14,20 @@ if (isset($_REQUEST['add_user'])) {
     }
 }
 
+switch ($_REQUEST['action']) {
+    case 'create_album':
+        Album::create(array(
+            'artist' => $_REQUEST['artist'],
+            'album'  => $_REQUEST['album'],
+            'year'   => $_REQUEST['year']
+        ));
+    break;
+
+    case 'delete_album':
+        Album::delete($_REQUEST['id']);
+    break;
+}
+
 
 
 if (isset($_REQUEST['logout'])) {
@@ -21,6 +35,7 @@ if (isset($_REQUEST['logout'])) {
 }
 
 if (Session::authenticated()) {
+    $template_data['albums'] = Album::getAll();
     Template::render('list', $template_data);
 } else {
     $template_data['title'] = 'Login';

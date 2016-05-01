@@ -9,6 +9,9 @@
      <div class="page">
          <header>
              <h1>Musika - <?= $title ?: 'Übersicht' ?></h1>
+             <? if (Session::authenticated()) : ?>
+                <a class="logout" href="?logout=1"><img src="assets/images/logout.png"></a>
+            <? endif ?>
          </header>
          <main>
              <?= $content_for_layout ?>

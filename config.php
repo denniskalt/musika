@@ -3,6 +3,10 @@
 define ('BASEDIR', __DIR__);
 include(BASEDIR .'/../db_config.inc.php');
 
+function h($text) {
+    return htmlspecialchars($text);
+}
+
 // set some php.ini-values (if possible)
 error_reporting(22519);                 // E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED
 ini_set('display_errors', 'On');

@@ -49,11 +49,10 @@ class Session {
         global $dbh;
 
         $stmt = $dbh->prepare("SELECT COUNT(*) FROM user
-            WHERE username = :user AND password = :password");
+            WHERE username = :user");
 
         $stmt->execute(array(
-            'user'     => $user,
-            'password' => $password
+            'user'     => $user
         ));
 
         if ($stmt->fetchColumn() == 0) {         // user does not yet exists, create it
