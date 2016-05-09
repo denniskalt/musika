@@ -12,7 +12,13 @@
    <label for="year">
        Erscheinungsjahr:
    </label>
-   <input id="year" type="text" name="year">
+   <select id="year" name="year">
+        <? for ($i = 1900; $i <= date('Y'); $i++) : ?>
+        <option value="<?= $i ?>" <?= ($i == date('Y')) ? 'selected="selected"': '' ?>>
+            <?= $i ?>
+        </option>
+        <? endfor ?>
+   </select>
 
    <button>Erstellen</button>
 
