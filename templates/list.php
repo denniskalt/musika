@@ -43,5 +43,6 @@ http://php.net/manual/de/control-structures.alternative-syntax.php
     </tfoot>
 </table>
 
+<button class="new_album">Neuen Eintrag erstellen</button>
 <br>
 <?= $this->render_partial('album/new') ?>

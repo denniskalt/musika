@@ -4,6 +4,8 @@
      <title>Musika - <?= $title ?: 'Übersicht' ?></title>
      <meta charset="windows-1252">
      <link rel="stylesheet" href="assets/stylesheets/stylesheet.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+     <script src="assets/javascripts/main.js"></script>
  </head>
  <body>
      <div class="page">
