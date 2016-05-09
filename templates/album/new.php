@@ -1,6 +1,6 @@
 <form action="index.php" method="post" class="login" id="new_album_entry" style="display:none">
    <label for="artist">
-       Künstler:
+       KÃ¼nstler:
    </label>
    <input id="artist" type="text" name="artist">
 

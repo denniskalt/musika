@@ -17,7 +17,7 @@ http://php.net/manual/de/control-structures.alternative-syntax.php
     <thead>
         <tr>
             <td>#ID</td>
-            <td>Künstler</td>
+            <td>KÃ¼nstler</td>
             <td>Album</td>
             <td>Erscheinungsjahr</td>
             <td></td>
@@ -31,7 +31,7 @@ http://php.net/manual/de/control-structures.alternative-syntax.php
             <td><?= h($album['artist']) ?></td>
             <td><?= h($album['album']) ?></td>
             <td><?= h($album['year']) ?></td>
-            <td><a href="?action=delete_album&id=<?= $album['id'] ?>">Löschen</a></td>
+            <td><a href="?action=delete_album&id=<?= $album['id'] ?>">LÃ¶schen</a></td>
         </tr>
         <? endforeach ?>
     </tbody>
