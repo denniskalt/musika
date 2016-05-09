@@ -53,6 +53,12 @@ main {
             font-size: $font-size;
         }
     }
+
+    button.new_album {
+        margin: 10px 0px;
+        height: 2em;
+        font-size: 14pt;
+    }
 }
 
 table.album  {
